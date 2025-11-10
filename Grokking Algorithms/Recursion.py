@@ -55,8 +55,6 @@ def max_Array(arr):
 
 print(max_Array(max_Array_Test))
 
-
-
 countingArr = [1,2,3,4,5,6,7]
 
 def countArr(arr):
@@ -76,3 +74,24 @@ def powerFunct(base, n):
         return base * powerFunct(base, n-1)
 
 print(powerFunct(2,4))
+
+def search(arr, target, low, high):
+    mid = (low + high)//2
+
+    if(low > high):
+        return None
+
+    if(arr[mid] == target):
+
+        return mid
+    elif(arr[mid] < target):
+
+        low = mid + 1
+        return search(arr, target, low, high)
+    elif(arr[mid] > target ):
+
+        high = mid -1 
+        return search(arr, target, low, high)
+
+arr =[1,2,3,4,5]
+print(search(arr, 5, 0, len(arr)-1))
